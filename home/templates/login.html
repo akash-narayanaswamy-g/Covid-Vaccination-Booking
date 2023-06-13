@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            background-color: #f1f1f1;
+            font-family: "Arial", sans-serif;
+        }
+
+        .login {
+            margin-top: 50px;
+            text-align: center;
+            animation: fadeIn 1s;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .login h1 {
+            font-style: italic;
+        }
+
+        .form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+            animation: slideIn 1s;
+        }
+
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .user {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 2px solid #000000;
+            border-radius: 8px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .user input[type="text"],
+        .user input[type="password"] {
+            width: 300px;
+            height: 40px;
+            margin-bottom: 10px;
+            padding: 5px;
+            font-size: 18px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .user button[type="submit"] {
+            padding: 12px 24px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: #428bca;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .user button[type="submit"]:hover {
+            background-color: #3071a9;
+        }
+    </style>
+</head>
+<body>
+    <div class="login">
+        <h1>LOGIN HERE</h1>
+    </div>
+
+    <div class="form">
+        <form action="verify" method="post">
+            {% csrf_token %}
+            <div class="user">
+                <label for="username">Enter your username:</label><br>
+                <input type="text" id="username" name="username"><br><br>
+                <label for="password">Enter the password:</label><br>
+                <input type="password" id="password" name="password"><br><br>
+                <button type="submit">LOGIN</button>
+            </div>
+        </form>
+    </div>
+
+    {% if messages %}
+        {% for message in messages %}
+            <script>alert("{{ message }}")</script> 
+        {% endfor %}
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Districts for Booking</title>
+    <style>
+        body {
+            background-color: #f1f1f1;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            border: 2px solid #000000;
+            margin-top: 20px;
+            padding: 20px;
+            width: 1000px;
+            height: 150px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .image {
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .place {
+            flex: 1;
+            margin-top: 20px;
+        }
+
+        .place h2 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .place p {
+            margin: 10px 0;
+            font-size: 16px;
+            color: #555555;
+        }
+
+        .button {
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .button a {
+            text-decoration: none;
+        }
+
+        .button button {
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: #428bca;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button button:hover {
+            background-color: #3071a9;
+        }
+
+        .intro {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 40px;
+            animation: slideIn 1s;
+        }
+
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="intro">Districts for Vaccination Booking</h1>
+
+    {% for dest in display %}
+    <div class="container">
+        <div class="image">
+            <img src="{{ dest.image_url }}" alt="Center Image">
+        </div>
+        <div class="place">
+            <h2>District: {{ dest.city }}</h2>
+            <p>Place: {{ dest.center_name }}</p>
+            <p>Vaccine: {{ dest.vaccine }}</p>
+            <p>Doses Available: {{ dest.dose_avva }}</p>
+        </div>
+        <div class="button">
+            <a href="{% url 'booking' %}?place={{ dest.id }}"><button type="submit">GET TICKETS</button></a>
+        </div>
+    </div>
+    {% endfor %}
+</body>
+</html>
