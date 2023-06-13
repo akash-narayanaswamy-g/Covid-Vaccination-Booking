@@ -78,11 +78,11 @@ WSGI_APPLICATION = 'vaccination.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'vaccine_manage',
-        'HOST': os.getenv('DATABASE_HOST'),
-        'PORT':'3306',
+        'NAME': 'railway',
+        'HOST':'containers-us-west-34.railway.app',
+        'PORT':'7498',
         'USER':'root',
-        'PASSWORD':'123456'
+        'PASSWORD':'aFBRwOu5ZxsmsbPrbjUe'
     }
 }
 
