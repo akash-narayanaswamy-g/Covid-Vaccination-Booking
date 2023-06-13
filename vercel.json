@@ -4,10 +4,10 @@
       {
         "src": "vaccination/wsgi.py",
         "use": "@vercel/python",
-        "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
+        "config": { "maxLambdaSize": "15mb", "runtime": "python" }
       },
       {
-        "src": "build_files.sh",
+        "src": "build_files.bat",
         "use": "@vercel/static-build",
         "config": {
           "distDir": "staticfiles_build"
@@ -15,6 +15,7 @@
       }
     ],
     "routes": [
+      { "handle": "filesystem" },
       {
         "src": "/static/(.*)",
         "dest": "/static/$1"
