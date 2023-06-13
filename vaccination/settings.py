@@ -79,7 +79,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'vaccine_manage',
-        'HOST':'LOCALHOST',
+        'HOST': os.getenv('DATABASE_HOST'),
         'PORT':'3306',
         'USER':'root',
         'PASSWORD':'123456'
