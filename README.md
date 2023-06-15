@@ -27,7 +27,7 @@ This is a web application for COVID Vaccination Booking. It allows users to sear
 
 ## Setup and Installation
 
-1. Clone the repository: `git clone https://github.com/your-username/covid-vaccination-booking.git`
+1. Clone the repository: `git clone [https://github.com/your-username/covid-vaccination-booking.git`](https://github.com/akash-narayanaswamy-g/Covid-Vaccination-Booking.git)
 2. Installation of Mysql workbench and Railway.api along with vercel required
 
 ## Usage
