@@ -1,9 +1,9 @@
-asgiref==3.7.2
-backports.zoneinfo==0.2.1
+asgiref
+backports.zoneinfo
 Django
-gunicorn==20.1.0
-mysqlclient==2.1.1
-psycopg2==2.9.6
-sqlparse==0.4.4
-typing-extensions==4.6.3
-tzdata==2023.3
+gunicorn
+mysqlclient
+psycopg2
+sqlparse
+typing-extensions
+tzdata
